@@ -81,51 +81,51 @@ function busTalkApp() {
         gpsDiagVelocidad: 0,
         contadorEvaluacionesCerca: 0,
 
-        // COORDENADAS EXACTAS DE MARQUESINAS SEGÚN SENTIDO (medbasha)
+        // COORDENADAS EXACTAS DE MARQUESINAS SEGÚN SENTIDO RECALIBRADAS (medbasha)
         coordenadasParadasIda: {
-            "Maó": { lat: 39.888524, lng: 4.265840 },
-            "Argen": { lat: 39.898850, lng: 4.201020 },
-            "Alaior P.": { lat: 39.932480, lng: 4.144180 },
-            "Alaior C.": { lat: 39.934810, lng: 4.140830 },
-            "Mer": { lat: 39.980240, lng: 4.089510 },
-            "Ferr": { lat: 39.982230, lng: 3.980520 },
-            "Ciu": { lat: 40.001120, lng: 3.836140 },
-            "Plaça de la Pau": { lat: 40.001120, lng: 3.836140 }
+            "Maó": { lat: 39.886850, lng: 4.258900 },               // Dársena Estació de Maó (Esplanada)
+            "Argen": { lat: 39.898850, lng: 4.201020 },             // L'Argentina
+            "Alaior P.": { lat: 39.932480, lng: 4.144180 },         // Alaior Polígon
+            "Alaior C.": { lat: 39.934810, lng: 4.140830 },         // Alaior Av. Pare Camps
+            "Mer": { lat: 39.980240, lng: 4.089510 },               // Es Mercadal Rotonda
+            "Ferr": { lat: 39.982300, lng: 3.984150 },              // Dársena Ferreries Av. Jaume Mascaró
+            "Ciu": { lat: 39.998190, lng: 3.839130 },               // Ciutadella Plaça de la Pau
+            "Plaça de la Pau": { lat: 39.998190, lng: 3.839130 }
         },
 
         coordenadasParadasVuelta: {
-            "Ciu": { lat: 40.001120, lng: 3.836140 },
-            "Plaça de la Pau": { lat: 40.001120, lng: 3.836140 },
-            "Ferr": { lat: 39.982110, lng: 3.980850 },
-            "Mer": { lat: 39.980120, lng: 4.089800 },
-            "Alaior C.": { lat: 39.934920, lng: 4.140950 },
-            "Alaior P.": { lat: 39.932350, lng: 4.144320 },
-            "Argen": { lat: 39.898700, lng: 4.201200 },
-            "Maó": { lat: 39.888524, lng: 4.265840 }
+            "Ciu": { lat: 39.998190, lng: 3.839130 },               // Ciutadella Plaça de la Pau
+            "Plaça de la Pau": { lat: 39.998190, lng: 3.839130 },
+            "Ferr": { lat: 39.982300, lng: 3.984150 },              // Dársena Ferreries Av. Jaume Mascaró
+            "Mer": { lat: 39.980120, lng: 4.089800 },               // Es Mercadal
+            "Alaior C.": { lat: 39.934920, lng: 4.140950 },         // Alaior Centro
+            "Alaior P.": { lat: 39.932350, lng: 4.144320 },         // Alaior Polígon
+            "Argen": { lat: 39.898700, lng: 4.201200 },             // L'Argentina
+            "Maó": { lat: 39.886850, lng: 4.258900 }                // Dársena Estació de Maó
         },
 
-        // COORDENADAS GENERALES RESTO DE MARQUESINAS (medbasha)
+        // COORDENADAS GENERALES RECALIBRADAS MARQUESINAS DE ISLA (medbasha)
         coordenadasParadasGeneral: {
             "Fontanilles": { lat: 39.884028, lng: 4.275000 },
-            "Castell": { lat: 39.880139, lng: 4.285278 },
+            "Castell": { lat: 39.878500, lng: 4.290500 },           // Es Castell C/ Gran
             "H. Mateu Orfila": { lat: 39.883056, lng: 4.258056 },
-            "S. Lluís": { lat: 39.851000, lng: 4.258500 },
-            "S. Climent": { lat: 39.865000, lng: 4.215000 },
-            "Canutells": { lat: 39.852000, lng: 4.168000 },
-            "C. Porter": { lat: 39.871000, lng: 4.132000 },
-            "S'Algar": { lat: 39.831000, lng: 4.291000 },
-            "Alcaufar": { lat: 39.828000, lng: 4.286000 },
-            "P. Prima": { lat: 39.814000, lng: 4.280000 },
-            "Binibèquer": { lat: 39.818000, lng: 4.238000 },
-            "S. Tomàs 1ª": { lat: 39.912300, lng: 4.038500 },
+            "S. Lluís": { lat: 39.851200, lng: 4.258200 },          // Sant Lluís Av. de sa Pau
+            "S. Climent": { lat: 39.869000, lng: 4.217500 },        // Sant Climent C/ Sant Jaume
+            "Canutells": { lat: 39.851800, lng: 4.168500 },
+            "C. Porter": { lat: 39.871200, lng: 4.131500 },         // Cala en Porter Av. Central
+            "S'Algar": { lat: 39.832200, lng: 4.295000 },
+            "Alcaufar": { lat: 39.828500, lng: 4.291000 },
+            "P. Prima": { lat: 39.814500, lng: 4.280200 },          // Punta Prima
+            "Binibèquer": { lat: 39.821000, lng: 4.238000 },
+            "S. Tomàs 1ª": { lat: 39.912300, lng: 4.038500 },        // Sant Tomàs Parada 1
             "S. Tomàs 2ª": { lat: 39.914100, lng: 4.041500 },
             "S. Tomàs 3ª": { lat: 39.916000, lng: 4.045000 },
-            "Galdana": { lat: 39.938000, lng: 3.961000 },
+            "Galdana": { lat: 39.936200, lng: 3.962800 },           // Cala Galdana Rotonda
             "Cementerio": { lat: 39.975000, lng: 3.978000 },
             "Camping": { lat: 39.962000, lng: 3.971000 },
             "C. Mitjana": { lat: 39.948000, lng: 3.965000 },
-            "Migjorn": { lat: 39.948100, lng: 4.081200 },
-            "Son Bou": { lat: 39.898300, lng: 4.071100 }
+            "Migjorn": { lat: 39.948100, lng: 4.081200 },           // Es Migjorn Gran
+            "Son Bou": { lat: 39.898800, lng: 4.072500 }            // Son Bou Passeig Marítim
         },
 
         estadoRadio: 'reposo', elQueHabla: null, lineaQueHabla: '',
