@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>BusTalk_v 2.9.37_GPS_INTELIGENTE</title>
+    <title>BusTalk_v 2.9.40_GPS_INTELIGENTE</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -135,7 +135,7 @@
             
             <div class="space-y-3 text-left overflow-y-auto hide-scrollbar flex-1 pr-1 text-xs text-sub font-bold">
                 <div class="p-3 bg-card rounded-2xl border border-gray-700 space-y-1">
-                    <p class="text-amber-500 font-black uppercase text-sm"><i class="fas fa-satellite mr-1"></i> Modo Geocerca GPS Dársena</p>
+                    <p class="text-amber-500 font-black uppercase text-sm"><i class="fas fa-satellite mr-1"></i> Modo Geocerca GPS Darsena</p>
                     <p class="text-primary font-normal">Detecta automáticamente la llegada a la marquesina objetivo al ingresar en el cajón de la parada y reducir la velocidad a menos de 10 km/h.</p>
                 </div>
                 <div class="p-3 bg-card rounded-2xl border border-gray-700 space-y-1">
@@ -255,7 +255,7 @@
     <div x-show="!sesionIniciada" x-transition.opacity class="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 backdrop-blur-md bg-black/90">
         <div class="bg-card p-8 rounded-[2rem] w-full max-w-sm text-center shadow-2xl border">
             <div class="text-yellow-500 text-6xl mb-4"><i class="fas fa-bus"></i><i class="fas fa-broadcast-tower text-3xl ml-2"></i></div>
-            <h2 class="text-xl font-black mb-1 uppercase tracking-wider text-primary">BusTalk_v 2.9.37_GPS_INTELIGENTE</h2>
+            <h2 class="text-xl font-black mb-1 uppercase tracking-wider text-primary">BusTalk_v 2.9.40_GPS_INTELIGENTE</h2>
             <p class="mb-4 text-xs text-sub font-bold">Introduce tu línea y nº de coche (ej. L01A-56):</p>
             
             <input type="text" x-model="miBusInput" @input="procesarInputBus()" placeholder="Ej: L01A-56" 
@@ -484,7 +484,7 @@
             <div class="flex items-center space-x-2">
                 <!-- RECUADRO AMARILLO DINÁMICO DE LÍNEA -->
                 <span class="bg-yellow-500 text-black font-black px-2.5 py-1 rounded-lg text-base flex-shrink-0 shadow-sm" x-text="obtenerCodigoLineaActual()"></span>
-                <h1 class="text-lg font-black tracking-tighter italic text-primary flex-shrink-0">Bus<span class="text-amber-600">Talk</span> <span class="text-[9px] bg-green-700 text-white px-1 py-0.5 rounded ml-1 not-italic font-mono">v2.9.37</span></h1>
+                <h1 class="text-lg font-black tracking-tighter italic text-primary flex-shrink-0">Bus<span class="text-amber-600">Talk</span> <span class="text-[9px] bg-green-700 text-white px-1 py-0.5 rounded ml-1 not-italic font-mono">v2.9.40</span></h1>
             </div>
             <span class="text-[11px] font-black text-sky-600 mt-0.5 uppercase tracking-wider truncate" x-text="miLinea || 'LÍNEA SIN DEFINIR'"></span>
         </div>
