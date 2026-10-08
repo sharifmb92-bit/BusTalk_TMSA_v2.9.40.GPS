@@ -83,25 +83,25 @@ function busTalkApp() {
 
         // COORDENADAS EXACTAS DE MARQUESINAS SEGÚN SENTIDO RECALIBRADAS (medbasha)
         coordenadasParadasIda: {
-            "Maó": { lat: 39.886850, lng: 4.258900 },               // Dársena Estació de Maó (Esplanada)
-            "Argen": { lat: 39.898850, lng: 4.201020 },             // L'Argentina
-            "Alaior P.": { lat: 39.932480, lng: 4.144180 },         // Alaior Polígon
-            "Alaior C.": { lat: 39.934810, lng: 4.140830 },         // Alaior Av. Pare Camps
-            "Mer": { lat: 39.980240, lng: 4.089510 },               // Es Mercadal Rotonda
-            "Ferr": { lat: 39.982300, lng: 3.984150 },              // Dársena Ferreries Av. Jaume Mascaró
+            "Maó": { lat: 39.886875, lng: 4.258442 },               // Dársena Estació de Maó (Esplanada)
+            "Argen": { lat: 39.915899, lng: 4.179612 },             // L'Argentina
+            "Alaior P.": { lat: 39.933661, lng: 4.144245 },         // Alaior Polígon
+            "Alaior C.": { lat: 39.931133, lng: 4.137307 },         // Alaior Av. Pare Camps
+            "Mer": { lat: 39.985061, lng: 4.094330 },               // Es Mercadal Rotonda
+            "Ferr": { lat: 39.985628, lng: 4.013859 },              // Dársena Ferreries Av. Jaume Mascaró
             "Ciu": { lat: 39.998190, lng: 3.839130 },               // Ciutadella Plaça de la Pau
-            "Plaça de la Pau": { lat: 39.998190, lng: 3.839130 }
+            "Plaça de la Pau": { lat: 39.998243, lng: 3.838948 }
         },
 
         coordenadasParadasVuelta: {
-            "Ciu": { lat: 39.998190, lng: 3.839130 },               // Ciutadella Plaça de la Pau
-            "Plaça de la Pau": { lat: 39.998190, lng: 3.839130 },
-            "Ferr": { lat: 39.982300, lng: 3.984150 },              // Dársena Ferreries Av. Jaume Mascaró
-            "Mer": { lat: 39.980120, lng: 4.089800 },               // Es Mercadal
-            "Alaior C.": { lat: 39.934920, lng: 4.140950 },         // Alaior Centro
-            "Alaior P.": { lat: 39.932350, lng: 4.144320 },         // Alaior Polígon
-            "Argen": { lat: 39.898700, lng: 4.201200 },             // L'Argentina
-            "Maó": { lat: 39.886850, lng: 4.258900 }                // Dársena Estació de Maó
+            "Ciu": { lat: 39.998243, lng: 3.838948 },               // Ciutadella Plaça de la Pau
+            "Plaça de la Pau": { lat: 39.998243, lng: 3.838948 },
+            "Ferr": { lat: 39.985477, lng: 4.013918 },              // Dársena Ferreries Av. Jaume Mascaró
+            "Mer": { lat: 39.985044, lng: 4.094345 },               // Es Mercadal
+            "Alaior C.": { lat: 39.930822, lng: 4.137572 },         // Alaior Centro
+            "Alaior P.": { lat: 39.933563, lng: 4.144062 },         // Alaior Polígon
+            "Argen": { lat: 39.916372, lng: 4.178651 },             // L'Argentina
+            "Maó": { lat: 39.886854, lng: 4.258401 }                // Dársena Estació de Maó
         },
 
         // COORDENADAS GENERALES RECALIBRADAS MARQUESINAS DE ISLA (medbasha)
