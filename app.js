@@ -301,6 +301,10 @@ function busTalkApp() {
 
             if (nombreLimpio.startsWith("Ferr")) nombreLimpio = "Ferr";
             if (nombreLimpio.startsWith("Alaior")) nombreLimpio = nombreLimpio.includes("C") ? "Alaior C." : "Alaior P.";
+            if (nombreLimpio === "S.Lluís") nombreLimpio = "S. Lluís";
+            if (nombreLimpio === "P.Prima") nombreLimpio = "P. Prima";
+            if (nombreLimpio === "C.Porter") nombreLimpio = "C. Porter";
+            if (nombreLimpio === "S.Climent") nombreLimpio = "S. Climent";
 
             if (this.esSentidoIda && this.coordenadasParadasIda[nombreLimpio]) {
                 return this.coordenadasParadasIda[nombreLimpio];
@@ -315,6 +319,9 @@ function busTalkApp() {
                 navigator.geolocation.watchPosition(
                     (pos) => {
                         this.gpsActivo = true;
+                        // Descartar lecturas imprecisas (> 40m) producidas por rebotes de señal
+                        if (pos.coords.accuracy && pos.coords.accuracy > 40) return;
+
                         let lat = pos.coords.latitude;
                         let lng = pos.coords.longitude;
                         let vel = (pos.coords.speed !== null && pos.coords.speed !== undefined) 
@@ -342,8 +349,9 @@ function busTalkApp() {
                     this.gpsDiagDistancia = distActual;
                     this.gpsDiagNombre = `${this.miUbicacion} (100%)`;
 
-                    // Si se aleja más de 150m de la marquesina actual -> AUTO-SALIDA
-                    if (distActual > 150) {
+                    // REGLA AUTO-SALIDA: Si alcanza 15 km/h O se aleja a más de 80m con velocidad real (>= 5 km/h)
+                    if (velKmh >= 15 || (distActual > 80 && velKmh >= 5)) {
+                        this.contadorEvaluacionesCerca = 0;
                         this.toggleParada(); // Conmuta automáticamente a "En Ruta"
                     }
                 }
@@ -357,32 +365,40 @@ function busTalkApp() {
             let paradaDetectada = null;
             let menorDistancia = 999999;
 
-            // Escanea desde la siguiente parada hasta el final de la ruta
+            // Escanea desde la siguiente parada hasta el final de la ruta (Radio 80 metros)
             for (let i = idxActual + 1; i < this.misParadasArray.length; i++) {
                 let nombreParada = this.misParadasArray[i];
                 let coords = this.obtenerCoordenadasDestino(nombreParada);
                 if (coords) {
                     let dist = this.calcularDistanciaMetros(lat, lng, coords.lat, coords.lng);
-                    if (dist <= 150 && dist < menorDistancia) {
+                    if (dist <= 80 && dist < menorDistancia) {
                         menorDistancia = dist;
                         paradaDetectada = nombreParada;
                     }
                 }
             }
 
-            // 3. CONFIRMAR LLEGADA A LA PARADA DETECTADA
+            // 3. CONFIRMAR LLEGADA A LA PARADA DETECTADA (Radio <= 80m + 3 segundos detenido/frenando)
             if (paradaDetectada) {
-                this.contadorEvaluacionesCerca++;
                 this.gpsDiagDistancia = Math.round(menorDistancia);
-                
-                let porcentaje = Math.min(99, 60 + (this.contadorEvaluacionesCerca * 20));
-                this.gpsDiagNombre = `${paradaDetectada} (${porcentaje}%)`;
 
-                // Al permanecer 2 evaluaciones consecutivas dentro del radio de 150m -> LLEGADA CONFIRMADA
-                if (this.contadorEvaluacionesCerca >= 2) {
-                    this.contadorEvaluacionesCerca = 0;
-                    this.gpsDiagNombre = `${paradaDetectada} (100%)`;
-                    this.actualizarUbicacion(paradaDetectada); // Asigna enParada = true y cambia ubicación
+                // Si la velocidad es de maniobra/detenido (<= 5 km/h), acumula evaluaciones consecutivas
+                if (velKmh <= 5) {
+                    this.contadorEvaluacionesCerca++;
+
+                    if (this.contadorEvaluacionesCerca === 1) {
+                        this.gpsDiagNombre = `${paradaDetectada} (75%)`;
+                    } else if (this.contadorEvaluacionesCerca === 2) {
+                        this.gpsDiagNombre = `${paradaDetectada} (90%)`;
+                    } else if (this.contadorEvaluacionesCerca >= 3) {
+                        // 3 evaluaciones consecutivas detenido (3 segundos) -> LLEGADA CONFIRMADA AL 100%
+                        this.contadorEvaluacionesCerca = 0;
+                        this.gpsDiagNombre = `${paradaDetectada} (100%)`;
+                        this.actualizarUbicacion(paradaDetectada); // Asigna enParada = true y cambia ubicación
+                    }
+                } else {
+                    // Si el bus pasa a más de 5 km/h por el radio de 80m, muestra progreso preliminar pero no cambia a enParada
+                    this.gpsDiagNombre = `${paradaDetectada} (60%)`;
                 }
             } else {
                 this.contadorEvaluacionesCerca = 0;
