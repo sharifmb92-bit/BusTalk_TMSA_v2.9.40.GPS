@@ -120,10 +120,10 @@ function busTalkApp() {
             "S. Tomàs 1ª": { lat: 39.916406, lng: 4.037136 },        // Sant Tomàs Parada 1
             "S. Tomàs 2ª": { lat: 39.915714, lng: 4.039473 },
             "S. Tomàs 3ª": { lat: 39.913775, lng: 4.044889 },
-            "Galdana": { lat: 39.936200, lng: 3.962800 },           // Cala Galdana Rotonda
-            "Cementerio": { lat: 39.975000, lng: 3.978000 },
-            "Camping": { lat: 39.962000, lng: 3.971000 },
-            "C. Mitjana": { lat: 39.948000, lng: 3.965000 },
+            "Galdana": { lat: 39.940290, lng: 3.959871 },           // Cala Galdana Rotonda
+            "Cementerio": { lat: 39.984095, lng: 4.007074 },
+            "Camping": { lat: 39.952131, lng: 3.987092 },
+            "C. Mitjana": { lat: 39.939665, lng: 3.966450 },
             "Migjorn": { lat: 39.944812, lng: 4.050660 },           // Es Migjorn Gran
             "Son Bou": { lat: 39.898800, lng: 4.072500 }            // Son Bou Passeig Marítim
         },
