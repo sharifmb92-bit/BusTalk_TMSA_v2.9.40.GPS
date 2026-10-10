@@ -117,14 +117,14 @@ function busTalkApp() {
             "Alcaufar": { lat: 39.828500, lng: 4.291000 },
             "P. Prima": { lat: 39.814500, lng: 4.280200 },          // Punta Prima
             "Binibèquer": { lat: 39.821000, lng: 4.238000 },
-            "S. Tomàs 1ª": { lat: 39.912300, lng: 4.038500 },        // Sant Tomàs Parada 1
-            "S. Tomàs 2ª": { lat: 39.914100, lng: 4.041500 },
-            "S. Tomàs 3ª": { lat: 39.916000, lng: 4.045000 },
+            "S. Tomàs 1ª": { lat: 39.916406, lng: 4.037136 },        // Sant Tomàs Parada 1
+            "S. Tomàs 2ª": { lat: 39.915714, lng: 4.039473 },
+            "S. Tomàs 3ª": { lat: 39.913775, lng: 4.044889 },
             "Galdana": { lat: 39.936200, lng: 3.962800 },           // Cala Galdana Rotonda
             "Cementerio": { lat: 39.975000, lng: 3.978000 },
             "Camping": { lat: 39.962000, lng: 3.971000 },
             "C. Mitjana": { lat: 39.948000, lng: 3.965000 },
-            "Migjorn": { lat: 39.948100, lng: 4.081200 },           // Es Migjorn Gran
+            "Migjorn": { lat: 39.944812, lng: 4.050660 },           // Es Migjorn Gran
             "Son Bou": { lat: 39.898800, lng: 4.072500 }            // Son Bou Passeig Marítim
         },
 
